@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Generator</title>
+</head>
+<body>
+    <h1>Invoice List</h1>
+    {% if invoices.count() > 0 %}
+        <ul>
+        {% for invoice in invoices %}
+            <li>
+        (<a href="/invoices/list?id={{invoice.key.urlsafe() }}">Detail</a>)
+        <b>{{ invoice.id}}</b> {{ invoice.hora}}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p><b>Empty invoices.</b></p>
+    {% endif %}
+
+    <a href="/invoices/new">New invoice</a>
+</body>
+</html>

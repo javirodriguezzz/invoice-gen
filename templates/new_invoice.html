@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Invoice</title>
+
+    <script>
+        function check() {
+            const edId = document.getElementById("edId");
+
+            return edId.value.trim().length > 0;
+        }
+    </script>
+</head>
+<body>
+    <h1>New Invoice</h1>
+    <form id="frmNewInvoice"
+          method="post"
+          action="/invoices/new"
+          onsubmit="return check()">
+
+        <label for="edId">ID</label>
+        <input type="number" id="edId" name="edId"
+               step="1" />
+
+        <p><input type="submit" value="Create"/></p>
+    </form>
+</body>
+</html>
