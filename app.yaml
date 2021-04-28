@@ -14,6 +14,7 @@ handlers:
 
 - url: /invoices/new
   script: handlers.new.app
+  login: required
 
 libraries:
 - name: webapp2

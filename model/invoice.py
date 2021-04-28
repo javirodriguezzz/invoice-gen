@@ -10,3 +10,4 @@ class Invoice(ndb.Model):
     emisor = ndb.KeyProperty(kind=Client)
     receiver = ndb.KeyProperty(kind=Client)
     invoice_line = ndb.KeyProperty(kind=Line)
+    autor = ndb.StringProperty()

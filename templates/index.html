@@ -5,13 +5,19 @@
     <title>Invoice Generator</title>
 </head>
 <body>
+    <p>
+        Action:
+        <a href="{{login_logout_url}}">
+        {% if usr %}logout{% else %}login{% endif %}
+        </a>
+    </p>
     <h1>Invoice List</h1>
     {% if invoices.count() > 0 %}
         <ul>
         {% for invoice in invoices %}
             <li>
         (<a href="/invoices/list?id={{invoice.key.urlsafe() }}">Detail</a>)
-        <b>{{ invoice.id}}</b> {{ invoice.hora}}
+        <b>{{ invoice.id}}</b> {{ invoice.hora}} factured by {{ invoice.autor }}
             </li>
         {% endfor %}
         </ul>
